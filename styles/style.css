@@ -107,8 +107,6 @@
   aspect-ratio: 1 / 1;
 }
 
-
-
 .label {
   position: absolute;
   top: 3.5%;
@@ -123,6 +121,10 @@
     -webkit-text-stroke: 1px var(--text-stroke-color);
     text-stroke: 1px var(--text-stroke-color);
   }
+}
+
+.multiple-filter {
+  filter: brightness(250%) hue-rotate(280deg) opacity(70%);
 }
 
 .sepia-filter {
