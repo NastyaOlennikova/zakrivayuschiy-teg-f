@@ -126,7 +126,7 @@
 }
 
 .sepia-filter {
-  filter: sepia(70%) saturate(200%) hue-rotate(30deg); 
+  filter: sepia(70%) opacity(70%);
 }
 
 .brightness-filter {
