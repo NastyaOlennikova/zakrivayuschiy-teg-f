@@ -129,16 +129,16 @@
   filter: sepia(70%);
 }
 
-.brighter-filter {
-  filter: brightness(250%) saturate(150%);
+.brightness-filter {
+  filter: brightness(250%);
 }
 
-.hue-rotate-rose-filter {
+.hue-rotate-filter {
   filter: hue-rotate(30deg);
 }
 
 .invert-filter {
-  filter: invert(0.7) hue-rotate(10deg);
+  filter: invert(0.7);
 }
 
 .grayscale-filter {
@@ -146,11 +146,11 @@
 }
 
 .blur-filter {
-  filter: blur(15px) contrast(20%);
+  filter: blur(15px);
 }
 
-.hue-rotate-green-filter {
-  filter: hue-rotate(100deg) contrast(40%) saturate(180%) blur(2px);
+.saturate-filter {
+  filter: saturate(150%);
 }
 
 .car {
