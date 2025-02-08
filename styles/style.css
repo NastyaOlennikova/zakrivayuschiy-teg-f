@@ -80,6 +80,7 @@
 }
 
 .card {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   border: 2px solid var(--main-border-color);
@@ -106,6 +107,8 @@
   aspect-ratio: 1 / 1;
 }
 
+
+
 .label {
   position: absolute;
   top: 3.5%;
@@ -113,11 +116,17 @@
   font-family: var(--accent-font-family);
   font-size: var(--button-font-size);
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
+@supports((text-stroke: 1px var(--text-stroke-color)) or (-webkit-text-stroke: 1px var(--text-stroke-color))) {
+  .label {
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+    text-stroke: 1px var(--text-stroke-color);
+  }
+} 
+
 .sepia-filter {
-  filter: sepia(70%);
+  filter: sepia(70%) contrast(100%);
 }
 
 .brighter-filter {
@@ -129,7 +138,7 @@
 }
 
 .invert-filter {
-  filter: invert(0.7);
+  filter: invert(0.7) hue-rotate(10deg);
 }
 
 .hard-sepia {
@@ -137,7 +146,7 @@
 }
 
 .blur {
-  filter: blur(15px);
+  filter: blur(15px) contrast(20%);
 }
 
 .hue-rotate-green-filter {
