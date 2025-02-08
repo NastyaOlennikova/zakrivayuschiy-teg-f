@@ -26,6 +26,7 @@
       <picture class="card__image">
         <source srcset="./images/car.png" media="(min-width: 700px)">
         <img class="car" src="./images/car_mobile.png" alt="Машина" loading="lazy">
+        <span class="label">&lt/HTML&gt</span>
       </picture>
       <p class="card__text">
         Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу. И, возможно,
@@ -45,11 +46,22 @@
         </button>
       </div>
     </article>
-    <button class="button__save">
-      <svg width="28" height="28" viewbox="0 0 39 39" class="floppy-icon">
+    <button class="button__save" onclick="window['dialog-id'].showModal()" aria-controls="dialog-id">
+      <svg viewBox="0 0 39 39" class="floppy-icon">
         <use href="./svg/floppy.svg#floppy" />
-      </svg>Сохранить на память
+      </svg><span class="button__save-text">Сохранить на память</span>
     </button>
+    <dialog class="dialog" id="dialog-id" aria-label="Сохранение на память">
+
+      <svg viewbox="0 0 39 39" class="floppy-icon">
+        <use href="./svg/floppy.svg#floppy" />
+      </svg>
+      <h2 class="dialog-title">Вставьте дискету, чтобы продолжить</h2>
+      <button class="submit__button" type="submit" onclick="window['dialog-id'].close()">
+        <span class="submit__button-text">OK</span>
+      </button>
+
+    </dialog>
   </main>
   <script src="./scripts/like.js"></script>
 </body>

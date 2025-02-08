@@ -6,4 +6,7 @@
     --title-weight: 700;
     --main-font-size: 18px;
     --button-font-size: 14px;
+    --main-text-color: #000;
+    --text-stroke-color: rgba(255, 255, 255, 0.5);
+    --background-color: #fff;
 }
