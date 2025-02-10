@@ -333,16 +333,15 @@
   transition: color 0s ease-in-out;
 }
 
-.dialog {
-  inline-size: clamp(341px, 25vw, 353px);
-  padding: 27px 27px;
+.dialog[open] {
+  min-inline-size: 341px;
+  inline-size: clamp(341px, 353px, 353px);
+  padding: 30px;
 }
 
 .dialog[open] .form {
-  inline-size: 100%;
-  block-size: 100%;
   display: grid;
-  grid-template-columns: min-content fit-content;
+  grid-template-columns: min-content minmax(198px, 234px);
   grid-template-rows: 1fr min-content;
 }
 
@@ -392,7 +391,7 @@
   .card__text:last-of-type {
     padding: 0 25px 26px 25px;
   }
-  
+
   .card__buttons-group {
     gap: 6px;
   }
@@ -407,8 +406,9 @@
   }
 
   .dialog {
-    padding: 27px 39px;
+    padding: 30px 42px;
   }
+
 
   .button__save {
     padding: 15px 11px;
