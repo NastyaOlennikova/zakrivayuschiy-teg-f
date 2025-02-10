@@ -1,4 +1,4 @@
-/* Здесь вы напишете основную часть стилей страницы.
+/* /* Здесь вы напишете основную часть стилей страницы.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ like-icon — для svg-иконки анимированного сердца
@@ -44,10 +44,9 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: 'wght' var(--main-font-weight);
-  background-image: repeating-linear-gradient(180deg, #d3d3d3, transparent 2px),
-    repeating-linear-gradient(90deg, #d3d3d3, transparent 2px),
-    linear-gradient(#e7e7e7, #1a1a1a);
+  font-variation-settings: 'wght' var(--main-text-weight);
+  background-image: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  background-attachment: fixed;
   background-size: cover;
   margin: auto;
 }
@@ -55,7 +54,7 @@
 .header {
   background-color: var(--background-color);
   border: 2px solid var(--main-border-color);
-  block-size: 51vh;
+  padding: 128px 120.5px;
   inline-size: clamp(320px, 100vw, 700px);
   display: flex;
   flex-direction: column;
@@ -67,14 +66,14 @@
 
 .title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   line-height: 1;
   margin-block-end: 20px;
 }
 
 .subtitle {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -90,14 +89,16 @@
 }
 
 .card__title {
-  font-family: var(--main-font-family);
+  font-family: var(--main-font-family), sans-serif;
   font-size: var(--main-font-size);
-  font-weight: var(--title-weight);
+  font-variation-settings: 'wght' var(--title-weight);
   padding: 4px 10px 6px 10px;
 }
 
 .card__image-wrapper {
   position: relative;
+  border-top: 2px solid var(--main-border-color);
+  border-bottom: 2px solid var(--main-border-color);
 }
 
 .card__image {
@@ -111,15 +112,21 @@
   position: absolute;
   top: 3.5%;
   right: 3.5%;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: var(--button-font-size);
   mix-blend-mode: hard-light;
+  text-shadow:
+    -1px 0 var(--text-stroke-color),
+    0 1px var(--text-stroke-color),
+    1px 0 var(--text-stroke-color),
+    0 -1px var(--text-stroke-color);
 }
 
 @supports((text-stroke: 1px var(--text-stroke-color)) or (-webkit-text-stroke: 1px var(--text-stroke-color))) {
   .label {
     -webkit-text-stroke: 1px var(--text-stroke-color);
     text-stroke: 1px var(--text-stroke-color);
+    text-shadow: none;
   }
 }
 
@@ -161,7 +168,7 @@
 }
 
 .card__text {
-  font-family: var(--main-font-family);
+  font-family: var(--main-font-family), sans-serif;
   font-size: var(--main-font-size);
   padding: 25px 25px 27px 25px;
 }
@@ -272,9 +279,8 @@
   transition: color 0s ease-in-out;
 }
 
-.card__like-button::before,
-.button__save::before,
-.submit__button::before {
+
+.hover-effect::before {
   content: "";
   position: absolute;
   top: 0;
@@ -282,44 +288,35 @@
   inline-size: 100%;
   block-size: 100%;
   background-color: #000;
-  transition: left 0.5s ease-in-out;
+  transition: left 0.3s ease-in-out;
 }
 
-.card__like-button:hover::before,
-.button__save:hover::before,
-.submit__button:hover::before {
+.hover-effect:hover::before {
   left: 0;
 }
 
-.button__text,
-.submit__button-text {
-  font-family: var(--accent-font-family);
+.button__text {
+  font-family: var(--accent-font-family), fantasy;
   font-size: var(--button-font-size);
   line-height: 0.9;
-  position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.5s ease-in-out;
-}
-
-.card__like-button:hover .button__text,
-.button__save:hover .button__save-text,
-.submit__button:hover .submit__button-text {
-  z-index: 1;
-  color: var(--accent-text-color)
+  color: #fff;
+  mix-blend-mode: difference;
 }
 
 .floppy-icon {
   padding: 0;
   width: 21px;
   height: 21px;
+  fill: #fff;
+  mix-blend-mode: difference;
 }
 
 .button__save {
   inline-size: clamp(306px, 50vw, 335px);
-  block-size: calc(7vh + 7px);
   background-color: var(--background-color);
   border: 2px solid var(--main-border-color);
   display: flex;
@@ -327,7 +324,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: var(--button-font-size);
   padding: 13px 11px;
   margin: 0 auto 100px auto;
@@ -336,31 +333,21 @@
   transition: color 0s ease-in-out;
 }
 
-
-.button__save-text {
-  transition: color 0.5s ease-in-out;
-}
-
-.button__save:hover .floppy-icon {
-  filter: invert(1);
-  z-index: 1;
-}
-
 .dialog {
-  block-size: 191px;
   inline-size: clamp(341px, 25vw, 353px);
+  padding: 27px 27px;
 }
 
-.dialog[open] {
-  border: 2px solid var(--main-border-color);
+.dialog[open] .form {
+  inline-size: 100%;
+  block-size: 100%;
   display: grid;
   grid-template-columns: min-content fit-content;
   grid-template-rows: 1fr min-content;
-  padding: 27px 39px;
 }
 
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .dialog .floppy-icon {
@@ -372,10 +359,11 @@
 
 .dialog-title {
   grid-column: 2;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   text-transform: uppercase;
   font-size: var(--button-font-size);
   line-height: 1.5;
+  margin-block-end: 30px;
 }
 
 .submit__button {
@@ -384,7 +372,7 @@
   border: 2px solid var(--main-border-color);
   background-color: var(--background-color);
   block-size: 38px;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: var(--button-font-size);
   overflow: hidden;
   position: relative;
@@ -392,9 +380,10 @@
 }
 
 @media (width <=700px) {
-  .button__save {
-    block-size: calc(10vh + 16px);
+  .header {
+    padding: 120px 14px;
   }
+
 
   .floppy-icon {
     width: 28px;
@@ -403,5 +392,9 @@
 
   .label {
     right: 13px;
+  }
+
+  .dialog {
+    padding: 27px 39px;
   }
 }
