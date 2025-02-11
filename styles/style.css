@@ -253,6 +253,7 @@
   display: grid;
   grid-template-columns: min-content minmax(198px, 234px);
   grid-template-rows: 1fr min-content;
+  row-gap: 30px;
 }
 
 .dialog::backdrop {
@@ -264,6 +265,7 @@
   width: 39px;
   height: 39px;
   margin-inline-end: 20px;
+  align-self: center;
 }
 
 .dialog-title {
@@ -272,7 +274,8 @@
   text-transform: uppercase;
   font-size: var(--button-font-size, 14px);
   line-height: 1.5;
-  margin-block-end: 30px;
+  align-self: center;
+
 }
 
 .submit__button {
