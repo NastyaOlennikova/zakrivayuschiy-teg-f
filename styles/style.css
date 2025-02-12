@@ -17,13 +17,13 @@
   background-image: repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px), linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
   background-attachment: fixed;
   background-size: cover;
-  margin: auto;
+  margin: 100px auto;
 }
 
 .header {
   background-color: var(--background-color, #fff);
   border: 2px solid var(--main-border-color, #000);
-  padding: 130px 120.5px 127px;
+  padding: 130px 120.5px 126px;
   inline-size: clamp(320px, 100vw, 700px);
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@
   font-family: var(--main-font-family, sans-serif);
   font-size: var(--main-font-size, 18px);
   font-variation-settings: 'wght' var(--title-weight, 700);
-  padding: 4px 10px 6px 10px;
+  padding: 4px 10px 4px 10px;
 }
 
 .card__image-wrapper {
@@ -139,12 +139,12 @@
 .card__text {
   font-family: var(--main-font-family, sans-serif);
   font-size: var(--main-font-size, 18px);
-  padding: 25px 25px 25px 25px;
+  padding: 26px 25px 25px 25px;
   line-height: 1.15;
 }
 
 .card__text:last-of-type {
-  padding: 2px 25px 27px 25px;
+  padding: 2px 25px 25px 25px;
 }
 
 .button {
@@ -181,13 +181,14 @@
   justify-content: end;
   align-items: center;
   gap: 8px;
-  padding: 0 25px 24px 25px;
+  padding: 0 25px 27px 25px;
 }
 
 .like-icon {
   display: block;
   height: 100%;
   width: 100%;
+  padding-block-start: 2px;
 }
 
 .sparks {
@@ -300,12 +301,16 @@
     margin: 0 auto 50px;
   }
 
+  .card__title {
+    padding: 5px 10px 3px 10px;
+  }
+
   .card__text {
-    padding: 25px 25px 25px 25px;
+    padding: 27px 25px 27px 25px;
   }
 
   .card__text:last-of-type {
-    padding: 2px 25px 27px 25px;
+    padding: 2px 25px 25px 25px;
   }
 
   .card__buttons-group {
@@ -318,8 +323,12 @@
     height: 28px;
   }
 
+  .like-icon {
+    padding-block-start: 0px;
+  }
+
   .label {
-    right: 13px;
+    top: 6%;
   }
 
   .dialog {
@@ -329,5 +338,4 @@
   .button__save {
     padding: 15px 11px;
   }
-
 }
