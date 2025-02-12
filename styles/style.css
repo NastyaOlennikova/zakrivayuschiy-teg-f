@@ -53,7 +53,7 @@
   flex-direction: column;
   border: 2px solid var(--main-border-color, #000);
   inline-size: clamp(320px, 100vw, 700px);
-  margin: 0 auto 50px;
+  margin: 0 auto 51px;
   background-color: var(--background-color, #fff);
 }
 
@@ -140,7 +140,7 @@
   font-family: var(--main-font-family, sans-serif);
   font-size: var(--main-font-size, 18px);
   padding: 26px 25px 25px 25px;
-  line-height: 1.15;
+  line-height: 1.16;
 }
 
 .card__text:last-of-type {
@@ -181,7 +181,7 @@
   justify-content: end;
   align-items: center;
   gap: 8px;
-  padding: 0 25px 27px 25px;
+  padding: 0 25px 25px 25px;
 }
 
 .like-icon {
@@ -310,7 +310,7 @@
   }
 
   .card__text:last-of-type {
-    padding: 2px 25px 25px 25px;
+    padding: 2px 25px 23px 25px;
   }
 
   .card__buttons-group {
